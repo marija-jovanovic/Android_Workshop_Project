@@ -1,61 +1,55 @@
-<h1 align = center>Андроид апликација за евиденција на присутност на часови</h1>
+<h1 align = center>Android application for tracking student class presence and evidence</h1>
 <div align="center"><img src="https://storage.googleapis.com/support-kms-prod/Yx4fAeIF6RziisPvHtAh60uRFDaWwHEEp1yv"></div>
 
- <b><h2 align = center>Вовед</h2></b>
+ <b><h2 align = center>Introduction</h2></b>
 
-Андроид апликација за евиденција на присутност на часови. 
+Android application for keeping an evidence of the student presence during classes.
 
-Апликацијата овозможува креирање на два типа на корисници, професори и студенти. 
+The application allows the creation of two types of users: 1) professors and 2) students. 
 
-<b>*Професорите*</b> имаат можност да регистрираат свои предмети, внесуваат термини за часови за секој предмет што го предаваат. За време на тековните часови може да ги видат присутните студенти во реално време и да го потврдат нивното присуство. За веќе поминатите часови имаат можност да прегледаат кои се студенти биле присутни и дополнително за секој час можат да ги разгледаат анонимните анкети.
+<b>*The professors*</b> have the ability to register their own courses, schedule lecture appointments for all of their personal courses. During the ongoing lecture appointments, they can see all of the present students live in real time and confirm their presence. For the appointments that have already passed, they can check which students were present and they can also check the anonymous polls.
 
-<b>*Студентите*</b> имаат можност да се запишуваат на предмети кои се активирани од страна на професорите, за секој запишан предмет можат да ги видат закажаните термини во текот на една работна недела, 2 часа пред секој термин добиваат нотификација за потсетување. Дополнително за секој тековен термин имаат можност да го потврдат своето присуство само доколку се локациски присутни на факултетот. Присутните студенти на крајот од тековниот термин имаат можност да пополнат анонимна анкета задавајќи оценка и коментар.
+<b>*The students*</b> have the ability to enroll in new courses which are offered by the current professors, for each enrolled subject they can view its weekly scheduled appointments. Additionally, for each ongoing appointment they have the ability to confirm their presence only if they are geographically located on campus. The present students at the end of the ongoing appointment can fill an anonymous poll by giving a 1-5 star rating and a short comment.
 
-За изведба на целосната апликација употребени беа следниве работи:
-- SQLite за чување на сите потребни информации
-- RecyclerView за приказ на потребните информации
-- Навигација помеѓу активности преку интенти
-- Фрагменти за portrait/landscape различен поглед на layout
-- Google maps за проверка на локацијата на студентите како и приказ на истата на мапа
+For the creation of the application the following stuff were used:
+- SQLite database for storing all the needed information
+- RecyclerView for displaying all the needed details
+- Navigation between activities via intents
+- Fragments for portrait/landscape view of a layout
+- Google maps for checking the location of the students and displaying that location on a map
 
-<h2 align = center>Инсталација на апликацијата</h2>
+<h2 align = center>Installation</h2>
 
-Најпрво, потребно е да се инсталира Android Studio.
+Make sure to download the zip file and open it via Android Studio.
 
-Потоа, притиснете на <> Code копчето кое се наоѓа најгоре десно во конректниов repository. Ископирајте го хиперлинкот што е зададен веднаш под HTTPS опцијата.
+<h2 align = center>Detailed description of the application</h2>
 
-Отворете го Android Studio и одете кај File > New > Project from Version Control. Ќе забележите дека ќе се отвори нов екран. Кај Version control одберете Git преку паѓачкото мени.
+The first screen that pops up when you first start the app is the SignUp screen. Here, you can create new account by providing an email, password and choosing a user role (professor/student). If you already have an account, you can just click on the text which directs you to the LogIn page and provide your existing email and password combination.
 
-Потоа во делот за URL вметнете го претходно ископираниот хиперлинк и одберете го вашиот директориум. На крај, притиснете на копчето Clone.
+After a successful login, the user will be redirected to the main page which corresponds to its role.
 
-За повеќе информации предлагам да се посети следнава страна https://www.geeksforgeeks.org/how-to-clone-android-project-from-github-in-android-studio/.
+<h3 align = center>Functionalities of a professor</h3>
 
-<h2 align = center>Детален опис на работата на апликацијата</h2>
+The main page of a professor consists of 5 buttons: button for registering new courses, button for adding new lecture appointments for the courses that he/she teaches, button for displaying all of the already scheduled appointments for each subject he/she teaches, button for viewing all of the appointments that are currently ongoing, as well as a button for viewing the presence and polls of students for the past appointments.
 
-При секое стартување на апликацијата, почетната активност која се појавува е активноста за креирање на нова корисничка сметка. Креирањето на нова сметка се прави на тој начин што се внесува корисничка електронска пошта и лозинка. Потоа, се бира улогата на сметката, односно дали сметката ќе припаѓа на професор или студент. Со притискање на копчето “Sign Up”, новата сметка се запишува во база и потоа се отвора нова активност за логирање. За да се логирате, потребно е да внесете електронска пошта и лозинка за сметка која е веќе претходно креирана. Со притискање на копчето “Login”, доколку најавата е успешна, корисникот ќе биде пренасочен на соодветен екран во зависност од неговата улога. Доколу при стартување на апликацијата корисникот нема потреба да креира нова сметка, туку сака да се најави со веќе постоечка сметка, едноставно треба да го притисне текстот “Already a user. Login”, кој ќе го пренасочи на екранот за логирање.
+When registering a new course, at the top are displayed all of the courses that the logged in professor teaches. If the professor wants to register a new course, he/she will have to choose a new course from the list of offered courses displayed by a spinner.
 
-При успешно логирање, корисникот ќе биде пренасочен на главниот екран кој соодветствува на неговата улога. 
+When adding new appointments, the professor needs to firstly choose the course for which the appointment is for (the course is selected via a spinner which lists only those courses that the logged in professor teaches), then using another spinner the professor chooses the day for the appointment, and at the end it is required to give the starting and ending time for the respective appointment. When choosing both of the times, it is important to confirm them by clicking the “Confirm starting time” and “Confirm ending time”, respectively. At the end, in order for the appointment to be created and inserted into the database, it is required to press the “Create the appointment” button.
 
-<h3 align = center>Професор функционалности</h3>
+In order for the professor to be able to view all of its appointments for its courses, he/she needs to select the course via spinner for which the appointments will be displayed.
 
-Доколку е професор, ќе има 5 копчиња и тоа копче за регистрација на нов предмет, копче за додавање нови часови за предметите кои ги предава, копче кое ги прикажува сите оформени термини/часови за секој предмет кој што го предава, копче за преглед на сите часови кои во даден момент (тековен момент) се одржуваат, како и копче за преглед на присутност и анкети на студенти за изминати часови.
+In order for the professor to be able to view all of its currently ongoing appointments in real time, he/she will have to press the “My currently ongoing lessons” button. This button will redirect the professor to a new screen where all of its ongoing lessons will be displayed. The professor can click on any of its ongoing lessons, and by doing that all of the present students in real time will be displayed for the particular appointment. If the professor decides that a student is written as present, but in reality the student is not present, the professor can click on the email address of that particular student where shortly he/she will be redirected to a new screen which allows the professor to remove that student from the list of all present students for the ongoing appointment.
 
-При регистрација на предмет, најгоре се прикажуваат сите предмети кои што најавениот професор ги предава. Доколку професорот сака да регистрира нов предмет, потребно е да одбере нов предмет од листата на понудени предмети прикажани преку spinner.
+If the professor clicks the “See previous attendance and polls” button, he/she will be redirected to a new screen where he/she can select one of its appointments via a spinner. Once an appointment is chosen from the spinner, a list of all of the students who were present will be displayed for that particular appointment (email address of the students, the id of the appointment and date of the appointment). If the professor rotates its device into landscape mode, apaprt from the present students (displayed on the left side), he will also be able to see all of the anonymous polls for that particular appointment (displayed on the right side). This is done using fragments.
 
-При додавање нови часови, најпрво треба да одбере за кој предмет ќе се однесува часот (предметот се бира преку spinner кој ги нуди само оние предмети кои најавениот професор ги држи), потоа преку друг spinner потребно е да се одбере денот кога ќе се одвива часот, и на крај потребно е да се зададе времето на почеток како и времето на завршеток за соодветниот час. Притоа, кога се бираат двете времиња потребно е да се потврдат преку притискање на копчињата “Confirm starting time” и “Confirm ending time”, соодветно. На крај, за да се креира терминот и да се внесе во база, потребно е да се притисне копчето “Create the appointment”.
+<h3 align = center>Functionalities of a student</h3>
 
-За да професорот има преглед на сите закажани термини за сопствените предмети, потребно е да избере преку spinner предмет за кој ќе бидат прикажани сите негови термини/часови.
+The main page of a student consists of 3 buttons: button for enrolling in new courses, button for displaying the appointments for the enrolled subjects and button for displaying the lessons that are currently ongoing in real time.
 
-За да професорот има преглед на сите тековни часови кои се одвиваат во реално време, потребно е да го притисне копчето “My currently ongoing lessons”. Тоа копче потоа ќе го однесе професорот на нов екран каде ќе бидат прикажани сите тековни термини. Професорот има можност да притисне било кој од тековните термини, по што ќе бидат прикажани сите студенти кои се присутни во реално време за притиснатиот тековен термин. Доколку професорот смета дека некој студент е запишан како присутен, но всушност не е присутен, тогаш може да притисне на соодветната електронска пошта на студентот при што ќе биде пренасочен на друг екран кој ќе му овозможи да го отстрани тој студент од листата на присутни студенти за тековниот термин (на тој начин ја прави таа потврда на присутност). 
+By clicking the “Enroll to a university course” button, the student is required to select a course for enrollment via a spinner. The offered courses will only be those that are actively taught by the current professors, in other words the courses which were registered by the professors for the semester. Once the student chooses a course from the spinner, the course is automatically saved into the database for enrolled subjects.
 
-Доколку професорот го притисне копчето “See previous attendance and polls”, тогаш ќе биде пренасочен на нов екран каде преку spinner ќе може да одбере некој од своите закажани термини. Откако ќе избере термин од spinner-от, веднаш ќе му се прикажат сите студенти кои биле присутни на тој термин (со наведена електронска пошта на студентот, идентификатор на терминот и датум на одржување на терминот на кој соодветниот студент бил присутен). Доколку професорот го намести својот уред во landscape режим, тогаш освен што ќе се прикажуваат кои студенти биле присутни на соодветниот избран термин со соодветен датум (прикажано на левата страна од уредот), дополнително на десната страна на уредот ќе бидат прикажани анонимните анкети наменети за соодветниот избран термин. За да биде ова овозможено, во позадина се користат фрагменти.
+By clicking the "My calendar" button, the student can choose a course from the spinner (the spinner only displays those courses that are enrolled by the currently logged student). After the choice is made, a list of all of the appointments for the particular course will be displayed. 
 
-<h3 align = center>Студент функционалности</h3>
+By clicking the “My currently ongoing lessons” button, the student will see all of the appointments that are currently ongoing in real time. The student can click on any of the ongoing appointments, and after that the student will be redirected to a new screen where automatically his/her location will be checked and additionally that location will be displayed on a google map. If the location of the student indicates that the student is on campus, then the student automatically has confirmed his/her presence. However, if the location does not indicate an adequate presence, then the student will not be able to confirm his/her presence and will get a message with inadequate location. Once the student has confirmed his/her presence, if the student decides to click again on the same ongoing appointment, it will just show the student's location and a message with "You have already confirmed your presence" will be displayed. When the ongoing lesson finishes, or to be precise when the current time becomes equal to the finishing time of the appointment, then by clicking the appointment the student will be redirected to a screen for filling the anonymous poll by giving a 1-5 star rating and a short comment. When the current time surpasses the finishing time of the apponitment, that appointment will be removed from the list of currently ongoing lessons.
 
-Доколку најавениот корисник е студент, тогаш ќе има на располагање 3 копчиња, и тоа копче за запишување на нови предмети, копче за приказ на термините за запишаните предмети и копче за приказ на тековните часови кои се одвиваат во реално време.
-
-При притискање на копчето “Enroll to a university course”, студентот треба да избере предмет кој сака да го запише преку spinner. Понудените предмети се оние предмети кои се активирани, односно предмети кои професорите ги имаат регистрирано за семестарот. Откако студентот ќе избере предмет од spinner-от, автоматски тој предмет се зачувува во базата на запишани предмети.
-
-При притискање на копчето “My calendar”, студентот треба да избере предмет од spinner-от (притоа spinner-от ќе ги прикажува само оние предмети кои најавениот студент ги има запишано). Откако ќе го направи изборот, веднаш ќе му се прикажат сите термини за соодветно избраниот предмет.
-
-При притискање на копчето “My currently ongoing lessons”, на студентот ќе му бидат прикажани сите тековни термини кои се одвиваат во реално време. Студентот има можност да притисне на било кој од прикажаните тековни термини, по што веднаш ќе биде пренасочен на нов екран каде во позадина ќе биде извршена проверка за неговата локација и дополнително ќе биде прикажана неговата локација на google maps мапа. Доколку локацијата на студентот соодветствува со локацијата на факултетот, тогаш студентот успешно во позадина ја потврдил својата присутност за притиснатиот тековен термин, во спротивно на студентот нема да му биде дозволено да ја потврди својата присутност и ќе му биде прикажана порака за несоодветна локација. Откако студентот еднаш ја потврдил својата присутност, при повторно притискање на истиот тековен термин, само ќе биде пренасочен на мапата која ја прикажува неговата локација и ќе му биде прикажана порака дека неговата присутност веќе е потврдена од претходно. Кога тековниот термин ќе заврши, односно кога реалното време ќе се изедначи со времето на завршеток на тековниот термин, тогаш при притискање на тековниот термин, студентот ќе биде пренасочен на екран за пополнување на анонимна анкета преку задавање на оцена и коментар. Откако реалното време ќе го надмине времето на завршеток на соодветниот термин, тој термин ќе биде отстранет од листата на тековни термини.
+NOTE: If you would like to have your Google Maps activity working, you will need to provide your own Google Maps API key.
